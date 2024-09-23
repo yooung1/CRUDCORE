@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// Classe para CRUD no banco de dados - CREATE/UPDATE/DELETE
-    /// SEMPRE QUE CHAMAR ESTA CLASSE IREI CRIEI UM OBJ CONTENDO OS DADOS QUE SERÃO SOLICITADOS
+    /// SEMPRE QUE CHAMAR ESTA CLASSE IREI CRIAR UM OBJ CONTENDO OS DADOS QUE SERÃO SOLICITADOS
     /// </summary>
     public class ContatoModel
     {
