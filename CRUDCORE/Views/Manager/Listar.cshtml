@@ -25,6 +25,10 @@
                         <td>@item.Nome</td>
                         <td>@item.Telefone</td>
                         <td>@item.Email</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Manager" class="btn btn-primary btn-sm" asp-route-IdContato="@item.IdContato">Editar</a>
+                            <a asp-action="Eliminar" asp-controller="Manager" class="btn btn-danger btn-sm" asp-route-IdContato="@item.IdContato">Eliminar</a>
+                        </td>
                     </tr>
                 }
             </tbody>

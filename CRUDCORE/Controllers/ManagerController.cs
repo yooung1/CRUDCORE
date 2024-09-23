@@ -36,5 +36,50 @@ namespace CRUDCORE.Controllers
                 return View();
             }
         }
+
+        public IActionResult Editar(int IdContato)
+        {
+            var objContato = ContatoDados.Obter(IdContato);
+            return View(objContato);
+        }
+
+        [HttpPost]
+        public IActionResult Editar(ContatoModel objContato)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var resposta = ContatoDados.Editar(objContato);
+            if (resposta)
+            {
+                return RedirectToAction("Listar");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public IActionResult Eliminar(int IdContato)
+        {
+            var objContato = ContatoDados.Obter(IdContato);
+            return View(objContato);
+        }
+
+        [HttpPost]
+        public IActionResult Eliminar(ContatoModel objContato)
+        {
+            var resposta = ContatoDados.Eliminar(objContato.IdContato);
+            if (resposta)
+            {
+                return RedirectToAction("Listar");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

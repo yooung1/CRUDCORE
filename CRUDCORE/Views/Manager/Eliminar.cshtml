@@ -1,0 +1,22 @@
+﻿@model ContatoModel;
+
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Criar Contato</h5>
+    <div class="card-body">
+        <form asp-action="Eliminar" asp-controller="Manager" method="post">
+            <input asp-for="IdContato" type="hidden" class="form-control">
+
+            <div class="alert alert-danger" role="alert">
+                Deseja eliminar o contato: @Html.DisplayTextFor(m => m.Nome)?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Listar" asp-controller="Manager" class="btn btn-warning">Voltar a lista</a>
+        </form>
+    </div>
+</div>
