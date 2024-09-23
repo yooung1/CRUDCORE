@@ -1,4 +1,7 @@
-﻿namespace CRUDCORE.Models
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
+namespace CRUDCORE.Models
 {
     /// <summary>
     /// Classe para CRUD no banco de dados - CREATE/UPDATE/DELETE
@@ -7,8 +10,11 @@
     public class ContatoModel
     {
         public int IdContato { get; set; }
+        [Required(ErrorMessage = "O campo 'Nome' é obrigatorio")]
         public string? Nome { get; set; }
+        [Required(ErrorMessage = "O campo 'Telefone' é obrigatorio")]
         public string? Telefone { get; set; }
+        [Required(ErrorMessage = "O campo 'Email' é obrigatorio")]
         public string? Email { get; set; }
     }
 }
